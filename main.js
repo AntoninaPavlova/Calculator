@@ -30,15 +30,24 @@ const buttonEquals = document.querySelector(".button-equals"); // кнопка �
 const buttonClear = document.querySelector(".button-clear"); // кнопка очистить
 
 // VARIABLES
+let isNumberEntered = false; 
+let isOperatorEntered = false; 
 
 // FUNCTIONS
 // Функция для добавления числа или точки
 const addNumber = (number) => {
   displayResult.value === "0" && number !== "." ? (displayResult.value = number) : (displayResult.value += number);
+
+  isNumberEntered = true;
+  isOperatorEntered = false;
 };
 
 // Функция для добавления операции
-const addOperation = (operation) => {};
+const addOperation = (operation) => {
+  isNumberEntered && !isOperatorEntered
+    ? ((displayResult.value += operation), (isOperatorEntered = true))
+    : isOperatorEntered && (displayResult.value = displayResult.value.slice(0, -1) + operation);
+};
 
 // Функция для вычисления результата
 const calculateResult = () => {};
