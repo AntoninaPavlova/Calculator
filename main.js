@@ -33,7 +33,9 @@ const buttonClear = document.querySelector(".button-clear"); // кнопка о�
 
 // FUNCTIONS
 // Функция для добавления числа или точки
-const addNumber = (number) => {};
+const addNumber = (number) => {
+  displayResult.value === "0" && number !== "." ? (displayResult.value = number) : (displayResult.value += number);
+};
 
 // Функция для добавления операции
 const addOperation = (operation) => {};
@@ -43,7 +45,6 @@ const calculateResult = () => {};
 
 // Функция для очистки результатов и текущего ввода
 const clearResult = () => {};
-
 
 // LISTENERS
 buttonDivide.addEventListener("click", () => addOperation("/"));
