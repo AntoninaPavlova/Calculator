@@ -30,8 +30,8 @@ const buttonEquals = document.querySelector(".button-equals"); // кнопка �
 const buttonClear = document.querySelector(".button-clear"); // кнопка очистить
 
 // VARIABLES
-let isNumberEntered = false; 
-let isOperatorEntered = false; 
+let isNumberEntered = false;
+let isOperatorEntered = false;
 
 // FUNCTIONS
 // Функция для добавления числа или точки
@@ -50,7 +50,10 @@ const addOperation = (operation) => {
 };
 
 // Функция для вычисления результата
-const calculateResult = () => {};
+const calculateResult = () => {
+  displayInput.value = displayResult.value; 
+  displayResult.value = eval(displayResult.value); 
+};
 
 // Функция для очистки результатов и текущего ввода
 const clearResult = () => {};
