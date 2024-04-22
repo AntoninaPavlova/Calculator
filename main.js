@@ -46,7 +46,7 @@ const addNumber = (number) => {
 const addOperation = (operation) => {
   isNumberEntered && !isOperatorEntered
     ? ((displayResult.value += operation), (isOperatorEntered = true))
-    : isOperatorEntered && (displayResult.value = displayResult.value.slice(0, -1) + operation);
+    : (displayResult.value = displayResult.value.slice(0, -1) + operation);
 };
 
 // Функция для вычисления результата
