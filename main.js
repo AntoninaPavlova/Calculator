@@ -51,12 +51,18 @@ const addOperation = (operation) => {
 
 // Функция для вычисления результата
 const calculateResult = () => {
-  displayInput.value = displayResult.value; 
-  displayResult.value = eval(displayResult.value); 
+  displayInput.value = displayResult.value;
+  displayResult.value = eval(displayResult.value);
 };
 
 // Функция для очистки результатов и текущего ввода
-const clearResult = () => {};
+const clearResult = () => {
+  displayInput.value = "";
+  displayResult.value = "0";
+
+  isNumberEntered = false;
+  isOperatorEntered = false;
+};
 
 // LISTENERS
 buttonDivide.addEventListener("click", () => addOperation("/"));
