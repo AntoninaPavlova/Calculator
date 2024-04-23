@@ -11,28 +11,31 @@
 // id'шники и getElementById
 // Это стоит сделать для явного разделения ответственности и логики
 // Так как подразумевается, что id - может быть единственным на странице.
-const displayInput = document.querySelector(".calculator__display-input");
-const displayResult = document.querySelector(".calculator__display-result");
+const displayInput = document.getElementById("display-input");
+const displayResult = document.getElementById("display-result");
 
-const buttonDivide = document.querySelector(".button-divide"); // кнопка деления
-const buttonMultiply = document.querySelector(".button-multiply"); // кнопка умножения
-const buttonSubtract = document.querySelector(".button-subtract"); // кнопка вычетания
-const buttonAdd = document.querySelector(".button-add"); // кнопка сложения
+const buttonDivide = document.getElementById("button-divide"); // кнопка деления
+const buttonMultiply = document.getElementById("button-multiply"); // кнопка умножения
+const buttonSubtract = document.getElementById("button-subtract"); // кнопка вычетания
+const buttonAdd = document.getElementById("button-add"); // кнопка сложения
 
-const buttonZero = document.querySelector(".button-zero");
-const buttonOne = document.querySelector(".button-one");
-const buttonTwo = document.querySelector(".button-two");
-const buttonThree = document.querySelector(".button-three");
-const buttonFour = document.querySelector(".button-four");
-const buttonFive = document.querySelector(".button-five");
-const buttonSix = document.querySelector(".button-six");
-const buttonSeven = document.querySelector(".button-seven");
-const buttonEight = document.querySelector(".button-eight");
-const buttonNine = document.querySelector(".button-nine");
-const buttonPoint = document.querySelector(".button-point");
+const buttonZero = document.getElementById("button-zero");
+const buttonOne = document.getElementById("button-one");
+const buttonTwo = document.getElementById("button-two");
+const buttonThree = document.getElementById("button-three");
+const buttonFour = document.getElementById("button-four");
+const buttonFive = document.getElementById("button-five");
+const buttonSix = document.getElementById("button-six");
+const buttonSeven = document.getElementById("button-seven");
+const buttonEight = document.getElementById("button-eight");
+const buttonNine = document.getElementById("button-nine");
+const buttonPoint = document.getElementById("button-point");
 
-const buttonEquals = document.querySelector(".button-equals"); // кнопка равно
-const buttonClear = document.querySelector(".button-clear"); // кнопка очистить
+const buttonEquals = document.getElementById("button-equals"); // кнопка равно
+const buttonClear = document.getElementById("button-clear"); // кнопка очистить
+
+const displayInputValue = displayInput.value;
+const displayResultValue = displayResult.value;
 
 // VARIABLES
 let isNumberEntered = false;
@@ -43,7 +46,14 @@ let isOperatorEntered = false;
 const addNumber = (number) => {
   // Посмотри какое у тебя длинное условие на 46 строчке
   // Попробуй переписать его на конструкцию if/else
-  displayResult.value === "0" && number !== "." ? (displayResult.value = number) : (displayResult.value += number);
+
+  const isZeroAndNoPoint = displayResult.value === "0" && number !== ".";
+
+  if (isZeroAndNoPoint) {
+    displayResult.value = number;
+  } else {
+    displayResult.value += number;
+  }
 
   isNumberEntered = true;
   isOperatorEntered = false;
@@ -52,16 +62,22 @@ const addNumber = (number) => {
 // Функция для добавления операции
 const addOperation = (operation) => {
   // Тут тоже переписать
-  isNumberEntered && !isOperatorEntered
-    ? ((displayResult.value += operation), (isOperatorEntered = true))
-    : (displayResult.value = displayResult.value.slice(0, -1) + operation);
+  const isNumberAndNotOperator = isNumberEntered && !isOperatorEntered;
+  const updatedDisplayValue = displayResult.value.slice(0, -1) + operation;
+
+  if (isNumberAndNotOperator) {
+    displayResult.value += operation;
+    isOperatorEntered = true;
+  } else {
+    displayResult.value = updatedDisplayValue;
+  }
 };
 
 // Функция для вычисления результата
 const calculateResult = () => {
   // Лучше .value добавить при объявлении переменной
   displayInput.value = displayResult.value;
-  displayResult.value = eval(displayResult.value);
+  displayResult.value = parseFloat((Math.round(eval(displayResult.value) * 10000) / 10000).toFixed(4));
 };
 
 // Функция для очистки результатов и текущего ввода

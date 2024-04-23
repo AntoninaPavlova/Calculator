@@ -4,40 +4,13 @@
 https://stackoverflow.com/questions/6887336/what-is-the-difference-between-normalize-css-and-reset-css
 */
 
-html *,
-html ::after,
-html ::before {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
-}
-
 body {
-  margin: 0;
   background: #000000;
 }
 
 img {
   max-width: 100%;
   margin: 0 auto;
-}
-
-p,
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  background-color: transparent;
-  text-decoration: none;
-}
-
-button {
-  padding: 0;
-  border: none;
 }
 
 .wrapper {
@@ -61,7 +34,10 @@ button {
   width: 100%;
   height: 100vh;
   margin: 0 auto;
+  display: -ms-grid;
   display: grid;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -78,8 +54,12 @@ button {
 
 .calculator__statusbar {
   padding: 15px 27px;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (1fr) [2];
   grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -91,10 +71,12 @@ button {
   letter-spacing: -0.32px;
   color: #000;
   text-align: center;
+  -ms-grid-column-align: start;
   justify-self: start;
 }
 
 .calculator__statusbar-icons {
+  -ms-grid-column-align: end;
   justify-self: end;
 }
 
@@ -127,12 +109,15 @@ button {
 
 .calculator__display-result:focus-visible {
   outline: none;
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
 .calculator__buttons {
   padding: 48px 43px;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 12px 1fr 12px 1fr 12px 1fr;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
   background-color: #f5f5f5;
@@ -142,8 +127,13 @@ button {
   width: 64px;
   height: 64px;
   margin: 0 auto;
+  display: -ms-grid;
   display: grid;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   cursor: pointer;
 }
@@ -190,10 +180,16 @@ button {
 .calculator__button:nth-of-type(16) {
   width: 64px;
   height: 144px;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
   grid-row: 4 / span 2;
+  -ms-grid-column: 4;
   grid-column: 4;
   border-radius: 32px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ed0e98), to(#fe5a2d));
+  background: -o-linear-gradient(top, #ed0e98 0%, #fe5a2d 100%);
   background: linear-gradient(180deg, #ed0e98 0%, #fe5a2d 100%);
+  -webkit-box-shadow: 0px 8px 18px 2px rgba(247, 60, 87, 0.4);
   box-shadow: 0px 8px 18px 2px rgba(247, 60, 87, 0.4);
 }
 
@@ -203,6 +199,8 @@ button {
   font-weight: 400;
   text-align: center;
   background-color: #f5f5f5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ed0e98), to(#fe5a2d));
+  background: -o-linear-gradient(top, #ed0e98 0%, #fe5a2d 100%);
   background: linear-gradient(180deg, #ed0e98 0%, #fe5a2d 100%);
   background-clip: text;
   -webkit-background-clip: text;

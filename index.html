@@ -23,6 +23,7 @@
 
     <!-- Main -->
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
 </head>
 
 <body>
@@ -45,13 +46,13 @@
 
                     <!-- Display -->
                     <div class="calculator__display">
-                        <input type="text" class="calculator__display-input">
-                        <input type="text" class="calculator__display-result" readonly="">
+                        <input type="text" class="calculator__display-input" id="display-input">
+                        <input type="text" class="calculator__display-result" id="display-result" readonly="">
                     </div>
 
                     <!-- Buttons -->
                     <div class="calculator__buttons">
-                        <button class="calculator__button button-change">
+                        <button class="calculator__button" id="button-change">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <path
@@ -66,7 +67,7 @@
                                 </defs>
                             </svg>
                         </button>
-                        <button class="calculator__button button-percent">
+                        <button class="calculator__button" id="button-percent">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <path d="M19 1L1 19" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"
@@ -81,7 +82,7 @@
                                 </path>
                             </svg>
                         </button>
-                        <button class="calculator__button button-divide">
+                        <button class="calculator__button" id="button-divide">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <path
@@ -96,7 +97,7 @@
                                 </path>
                             </svg>
                         </button>
-                        <button class="calculator__button button-multiply">
+                        <button class="calculator__button" id="button-multiply">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
                                 fill="none">
                                 <path d="M17 1L1 17" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"
@@ -106,16 +107,16 @@
                             </svg>
                         </button>
 
-                        <button class="calculator__button button-seven">
+                        <button class="calculator__button" id="button-seven">
                             7
                         </button>
-                        <button class="calculator__button button-eight">
+                        <button class="calculator__button" id="button-eight">
                             8
                         </button>
-                        <button class="calculator__button button-nine">
+                        <button class="calculator__button" id="button-nine">
                             9
                         </button>
-                        <button class="calculator__button button-subtract">
+                        <button class="calculator__button" id="button-subtract">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="2" viewBox="0 0 20 2"
                                 fill="none">
                                 <path d="M1 1H19" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"
@@ -123,16 +124,16 @@
                             </svg>
                         </button>
 
-                        <button class="calculator__button button-four">
+                        <button class="calculator__button" id="button-four">
                             4
                         </button>
-                        <button class="calculator__button button-five">
+                        <button class="calculator__button" id="button-five">
                             5
                         </button>
-                        <button class="calculator__button button-six">
+                        <button class="calculator__button" id="button-six">
                             6
                         </button>
-                        <button class="calculator__button button-add">
+                        <button class="calculator__button" id="button-add">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <path d="M10 1V19" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"
@@ -142,17 +143,17 @@
                             </svg>
                         </button>
 
-                        <button class="calculator__button button-one">
+                        <button class="calculator__button" id="button-one">
                             1
                         </button>
-                        <button class="calculator__button button-two">
+                        <button class="calculator__button" id="button-two">
                             2
                         </button>
-                        <button class="calculator__button button-three">
+                        <button class="calculator__button" id="button-three">
                             3
                         </button>
 
-                        <button class="calculator__button button-equals">
+                        <button class="calculator__button" id="button-equals">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10"
                                 fill="none">
                                 <path d="M1 1H19" stroke="white" stroke-width="2" stroke-linecap="round"
@@ -162,13 +163,13 @@
                             </svg>
                         </button>
 
-                        <button class="calculator__button button-clear">
+                        <button class="calculator__button" id="button-clear">
                             AC
                         </button>
-                        <button class="calculator__button button-zero">
+                        <button class="calculator__button" id="button-zero">
                             0
                         </button>
-                        <button class="calculator__button button-point">
+                        <button class="calculator__button" id="button-point">
                             .
                         </button>
                     </div>
@@ -181,7 +182,7 @@
     <!-- type="text/javascript" -->
     <!-- Также стоит использовать относительные пути для лучшей читаемости -->
     <!-- И предотвращения возможных ошибок -->
-    <script src="main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
