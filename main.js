@@ -6,6 +6,11 @@
 // Дизайн: На свой вкус :)
 
 // CONST
+
+// Советую переделать получение классов через querySelector на
+// id'шники и getElementById
+// Это стоит сделать для явного разделения ответственности и логики
+// Так как подразумевается, что id - может быть единственным на странице.
 const displayInput = document.querySelector(".calculator__display-input");
 const displayResult = document.querySelector(".calculator__display-result");
 
@@ -36,6 +41,8 @@ let isOperatorEntered = false;
 // FUNCTIONS
 // Функция для добавления числа или точки
 const addNumber = (number) => {
+  // Посмотри какое у тебя длинное условие на 46 строчке
+  // Попробуй переписать его на конструкцию if/else
   displayResult.value === "0" && number !== "." ? (displayResult.value = number) : (displayResult.value += number);
 
   isNumberEntered = true;
@@ -44,6 +51,7 @@ const addNumber = (number) => {
 
 // Функция для добавления операции
 const addOperation = (operation) => {
+  // Тут тоже переписать
   isNumberEntered && !isOperatorEntered
     ? ((displayResult.value += operation), (isOperatorEntered = true))
     : (displayResult.value = displayResult.value.slice(0, -1) + operation);
@@ -51,6 +59,7 @@ const addOperation = (operation) => {
 
 // Функция для вычисления результата
 const calculateResult = () => {
+  // Лучше .value добавить при объявлении переменной
   displayInput.value = displayResult.value;
   displayResult.value = eval(displayResult.value);
 };

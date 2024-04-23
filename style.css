@@ -1,17 +1,26 @@
+/* Лучше файлов для обнуляющих стилей называть как reset.css 
+или же normalize.css 
+Между названиями есть разница поэтому советую её почитать тут
+https://stackoverflow.com/questions/6887336/what-is-the-difference-between-normalize-css-and-reset-css
+*/
+
 html *,
 html ::after,
 html ::before {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
+
 body {
   margin: 0;
   background: #000000;
 }
+
 img {
   max-width: 100%;
   margin: 0 auto;
 }
+
 p,
 h1,
 h2,
@@ -20,14 +29,17 @@ h4 {
   margin: 0;
   padding: 0;
 }
+
 a {
   background-color: transparent;
   text-decoration: none;
 }
+
 button {
   padding: 0;
   border: none;
 }
+
 .wrapper {
   max-width: 100%;
   min-width: 320px;
@@ -37,11 +49,13 @@ button {
   color: #1e1e1e;
   overflow: hidden;
 }
+
 .container {
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
 }
+
 .main {
   max-width: 1170px;
   width: 100%;
@@ -50,21 +64,25 @@ button {
   display: grid;
   align-items: center;
 }
+
 .calculator {
   max-width: 390px;
   width: 100%;
   margin: 0 auto;
 }
+
 .calculator__statusbar,
 .calculator__display {
   background: #fff;
 }
+
 .calculator__statusbar {
   padding: 15px 27px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
 }
+
 .calculator__statusbar-time {
   font-size: 16px;
   font-style: normal;
@@ -75,12 +93,15 @@ button {
   text-align: center;
   justify-self: start;
 }
+
 .calculator__statusbar-icons {
   justify-self: end;
 }
+
 .calculator__display {
   padding: 111px 43px 43px;
 }
+
 .calculator__display-input {
   width: 100%;
   margin-bottom: 8px;
@@ -92,6 +113,7 @@ button {
   text-align: right;
   border: none;
 }
+
 .calculator__display-result {
   width: 100%;
   font-size: 48px;
@@ -102,10 +124,12 @@ button {
   text-align: right;
   border: none;
 }
+
 .calculator__display-result:focus-visible {
   outline: none;
   box-shadow: none;
 }
+
 .calculator__buttons {
   padding: 48px 43px;
   display: grid;
@@ -113,6 +137,7 @@ button {
   gap: 12px;
   background-color: #f5f5f5;
 }
+
 .calculator__button {
   width: 64px;
   height: 64px;
@@ -122,11 +147,13 @@ button {
   justify-content: center;
   cursor: pointer;
 }
+
 .calculator__button:nth-of-type(1) {
   border-radius: 32px;
   border: 2px solid #eaeaea;
   background-color: #f5f5f5;
 }
+
 .calculator__button:nth-of-type(2),
 .calculator__button:nth-of-type(3),
 .calculator__button:nth-of-type(4),
@@ -136,6 +163,7 @@ button {
   border: 2px solid #eaeaea;
   background-color: #eaeaea;
 }
+
 .calculator__button:nth-of-type(5),
 .calculator__button:nth-of-type(6),
 .calculator__button:nth-of-type(7),
@@ -158,6 +186,7 @@ button {
   border-radius: 32px;
   border: 2px solid #eaeaea;
 }
+
 .calculator__button:nth-of-type(16) {
   width: 64px;
   height: 144px;
@@ -167,6 +196,7 @@ button {
   background: linear-gradient(180deg, #ed0e98 0%, #fe5a2d 100%);
   box-shadow: 0px 8px 18px 2px rgba(247, 60, 87, 0.4);
 }
+
 .calculator__button:nth-of-type(17) {
   font-size: 22px;
   font-style: normal;
@@ -178,25 +208,30 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 @media (max-width: 1680px) {
   .calculator__display {
     padding: 43px;
   }
 }
+
 @media (max-width: 1169.98px) {
   .calculator__buttons {
     padding: 25px 43px;
   }
+
   .calculator__button {
     width: 50px;
     height: 50px;
   }
 }
+
 @media (max-width: 1024px) {
   .calculator__display {
     padding: 25px;
   }
 }
+
 @media (max-width: 379.98px) {
   .calculator__buttons {
     padding: 25px 0;
