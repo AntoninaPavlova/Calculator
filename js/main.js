@@ -29,9 +29,6 @@ const buttonPoint = document.getElementById("button-point");
 const buttonEquals = document.getElementById("button-equals"); 
 const buttonClear = document.getElementById("button-clear"); 
 
-const displayInputValue = displayInput.value;
-const displayResultValue = displayResult.value;
-
 // VARIABLES
 let isNumberEntered = false;
 let isOperatorEntered = false;
