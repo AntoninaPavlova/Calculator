@@ -1,9 +1,3 @@
-/* Лучше файлов для обнуляющих стилей называть как reset.css 
-или же normalize.css 
-Между названиями есть разница поэтому советую её почитать тут
-https://stackoverflow.com/questions/6887336/what-is-the-difference-between-normalize-css-and-reset-css
-*/
-
 body {
   background: #000000;
 }

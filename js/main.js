@@ -6,18 +6,13 @@
 // Дизайн: На свой вкус :)
 
 // CONST
-
-// Советую переделать получение классов через querySelector на
-// id'шники и getElementById
-// Это стоит сделать для явного разделения ответственности и логики
-// Так как подразумевается, что id - может быть единственным на странице.
 const displayInput = document.getElementById("display-input");
 const displayResult = document.getElementById("display-result");
 
-const buttonDivide = document.getElementById("button-divide"); // кнопка деления
-const buttonMultiply = document.getElementById("button-multiply"); // кнопка умножения
-const buttonSubtract = document.getElementById("button-subtract"); // кнопка вычетания
-const buttonAdd = document.getElementById("button-add"); // кнопка сложения
+const buttonDivide = document.getElementById("button-divide"); 
+const buttonMultiply = document.getElementById("button-multiply"); 
+const buttonSubtract = document.getElementById("button-subtract"); 
+const buttonAdd = document.getElementById("button-add"); 
 
 const buttonZero = document.getElementById("button-zero");
 const buttonOne = document.getElementById("button-one");
@@ -31,8 +26,8 @@ const buttonEight = document.getElementById("button-eight");
 const buttonNine = document.getElementById("button-nine");
 const buttonPoint = document.getElementById("button-point");
 
-const buttonEquals = document.getElementById("button-equals"); // кнопка равно
-const buttonClear = document.getElementById("button-clear"); // кнопка очистить
+const buttonEquals = document.getElementById("button-equals"); 
+const buttonClear = document.getElementById("button-clear"); 
 
 const displayInputValue = displayInput.value;
 const displayResultValue = displayResult.value;
@@ -44,9 +39,6 @@ let isOperatorEntered = false;
 // FUNCTIONS
 // Функция для добавления числа или точки
 const addNumber = (number) => {
-  // Посмотри какое у тебя длинное условие на 46 строчке
-  // Попробуй переписать его на конструкцию if/else
-
   const isZeroAndNoPoint = displayResult.value === "0" && number !== ".";
 
   if (isZeroAndNoPoint) {
@@ -61,7 +53,6 @@ const addNumber = (number) => {
 
 // Функция для добавления операции
 const addOperation = (operation) => {
-  // Тут тоже переписать
   const isNumberAndNotOperator = isNumberEntered && !isOperatorEntered;
   const updatedDisplayValue = displayResult.value.slice(0, -1) + operation;
 
